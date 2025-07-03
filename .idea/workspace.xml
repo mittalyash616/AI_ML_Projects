@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f681fc81-4ce6-4909-8d11-d5d5ce2c921b" name="Changes" comment="testing">
-      <change afterPath="$PROJECT_DIR$/movie_recommendation_system/.streamlit/secrets.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_recommendation_system/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_recommendation_system/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -89,7 +92,7 @@
       <workItem from="1751519358916" duration="21000" />
       <workItem from="1751519380419" duration="33000" />
       <workItem from="1751520100235" duration="1426000" />
-      <workItem from="1751522807240" duration="2515000" />
+      <workItem from="1751522807240" duration="4828000" />
     </task>
     <task id="LOCAL-00001" summary="testing">
       <option name="closed" value="true" />
