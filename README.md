@@ -1,4 +1,4 @@
-# 🤖 AI & ML Projects by Yash Mittal
+# 🤖 AI & ML Projects by Yash Mittal Student of Bennett University
 
 Welcome to my collection of AI and Machine Learning projects. This repository includes completed and in-progress projects that explore different areas like recommendation systems and natural language processing.
 
