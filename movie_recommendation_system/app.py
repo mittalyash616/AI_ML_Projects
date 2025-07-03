@@ -4,7 +4,7 @@ import requests
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
-movies_list=pickle.load(open('movies.pkl', 'rb'))
+movies_list=pickle.load(open('movie_recommendation_system/movies.pkl', 'rb'))
 st.set_page_config(layout="wide")
 tmdb_api_key = st.secrets["api"]["tmdb_key"]
 cv=CountVectorizer(max_features=5000,stop_words='english')
