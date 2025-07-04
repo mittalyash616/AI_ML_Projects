@@ -1,0 +1,7 @@
+streamlit
+firebase-admin
+python-dotenv
+langchain
+langchain-core
+langgraph
+langchain-google-genai
