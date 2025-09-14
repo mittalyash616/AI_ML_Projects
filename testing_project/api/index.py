@@ -1,33 +1,25 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from langchain_openai import ChatOpenAI
-import os
-from mangum import Mangum  # ✅ Needed for Vercel/AWS Lambda
+from langchain.chat_models import init_chat_model
+from langchain_core.output_parsers import StrOutputParser
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 
-llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.getenv("OPENAI_API_KEY"))
-
-# ✅ Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can restrict this to your frontend domain later
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-class Query(BaseModel):
-    question: str
-
-@app.post("/ask")
-async def ask_agent(query: Query):
-    try:
-        response = llm.invoke(query.question)
-        return {"answer": response.content}
-    except Exception as e:
-        return {"error": str(e)}
-
-# ✅ Vercel entrypoint
-handler = Mangum(app)
+@app.post("/chatbot")
+async def chatbot(user: dict):
+    llm = init_chat_model("gpt-4o-mini", model_provider="openai")
+    chain = llm | StrOutputParser()
+    message = user["message"]
+    result = chain.invoke(message)
+    return {"reply": result}
