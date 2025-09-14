@@ -4,12 +4,7 @@ from pydantic import BaseModel
 from langchain_openai import ChatOpenAI
 import os
 
-
-
 app = FastAPI()
-
-# ✅ Load API key from environment
-
 
 llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.getenv("OPENAI_API_KEY"))
 
