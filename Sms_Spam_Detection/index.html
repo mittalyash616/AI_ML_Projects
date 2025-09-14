@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Frontend</title>
+</head>
+<body>
+    <h1>Ask the Agent</h1>
+    <input id="question" placeholder="Ask me..." />
+    <button onclick="ask()">Ask</button>
+    <div id="answer" style="margin-top:20px;"></div>
+
+    <script>
+        async function ask() {
+            const question = document.getElementById("question").value;
+            if (!question) return alert("Please type a question");
+
+            try {
+                const response = await fetch("https://ai-ml-projects-o8dasjpxc-mittalyash616-gmailcoms-projects.vercel.app/ask", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({ question })
+                });
+                const data = await response.json();
+                if (data.answer) {
+                    document.getElementById("answer").innerText = data.answer;
+                } else {
+                    document.getElementById("answer").innerText = data.error || "Error";
+                }
+            } catch (err) {
+                document.getElementById("answer").innerText = "Failed to fetch API: " + err;
+            }
+        }
+    </script>
+</body>
+</html>

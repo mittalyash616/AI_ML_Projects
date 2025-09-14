@@ -1,3 +1,6 @@
 fastapi
 uvicorn
-openai
+pydantic
+langchain
+langchain-openai
+mangum
